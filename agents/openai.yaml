@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Systems Optimization"
+  short_description: "Profile inference workloads and validate system optimizations"
+  default_prompt: "Use $model-system-optimization to establish a baseline, agree on accuracy criteria, and iteratively optimize measured bottlenecks while validating correctness and end-to-end performance."
