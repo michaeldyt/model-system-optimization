@@ -37,9 +37,17 @@ For each iteration, state the hypothesis, expected benefit, numerical or state-r
 - Check correctness at the relevant levels: operator, complete model, stateful sequence, or service. Validate the complete model whenever arithmetic changes, even if an isolated operator matches.
 - If correctness fails, stop adding changes and locate the earliest divergence under identical inputs and state. Distinguish pre-existing variability from effects introduced by the candidate.
 - After correctness passes, compare performance under matched conditions, preferably with paired or counterbalanced trials. Include relevant memory use, compilation overhead, and tail latency.
-- Accept a change only when it meets the agreed criteria and the benefit is reproducible. Recheck combinations of accepted changes and retain brief records of unsuccessful experiments.
+- Accept a change only after independent acceptance, when it meets the agreed criteria and the benefit is reproducible. Recheck combinations of accepted changes and retain brief records of unsuccessful experiments.
 
 Choose implementation techniques and test scope according to the evidence. Routine reversible iterations do not require renewed approval; changes to agreed accuracy, semantics, or resource limits require a new agreement.
+
+### Independent acceptance
+
+For every acceptance decision, including the final combined configuration, start a separate agent/subagent that did not implement the candidate. Exploratory runs do not each require this review. The implementing agent must not approve its own change.
+
+Give the reviewer the agreed criteria, preserved reference, exact candidate revision and configuration, changes, evaluation commands, and raw results. Ask for an independent verdict rather than confirmation of the implementer's conclusion. The reviewer must inspect evaluation integrity and independently run the decisive correctness and performance checks; scope them to the change and agreed criteria. Check for relaxed tolerances, altered references, excluded failures, reduced workloads, inconsistent timing boundaries, or tests that bypass the candidate. Neither agent may change acceptance criteria or reference results to obtain a pass; any legitimate evaluation correction must be documented and applied consistently to reference and candidate.
+
+Record **pass**, **fail**, or **inconclusive**, with evidence and limitations tied to the reviewed version. Accept only after a pass; subsequent implementation or evaluation changes require renewed review. If a separate reviewer or necessary checks are unavailable, leave acceptance pending and report the limitation. Independent review reduces reward hacking risk; it is not a guarantee.
 
 ## References
 

@@ -8,7 +8,7 @@ A reusable skill for coding agents working on inference performance. It combines
 2. **Establish a baseline.** Preserve the original reference and characterize numerical variability and timing noise.
 3. **Identify the bottleneck.** Analyze the critical path and distinguish compute, memory, launch, synchronization, and queueing limits.
 4. **Evaluate one main change.** Verify that the candidate executes, check correctness, then measure performance under comparable conditions. Investigate discrepancies before adding further changes.
-5. **Retain demonstrated improvements.** Record results, reassess the bottleneck, and repeat while further work is worthwhile.
+5. **Obtain independent acceptance.** For each acceptance decision, a separate agent/subagent checks evaluation integrity and independently verifies correctness and performance. Retain passing changes, record results, and reassess the bottleneck.
 
 Methods, tolerances, and minimum useful speedups depend on the task. The references provide technical considerations rather than a fixed sequence of optimizations.
 
